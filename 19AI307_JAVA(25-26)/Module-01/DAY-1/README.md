@@ -20,11 +20,9 @@ Write a Program to print "Hey, my first java program!" using output statement.
 
 ## PROGRAM:
  ```
-/*
 Program to implement variables and Operators using Java
 Developed by: Khamalraaj S
 RegisterNumber:  212224230122
-*/
 ```
 
 ## Sourcecode.java:
@@ -46,6 +44,7 @@ System.out.println("Hey, my first java program!");
 ## RESULT:
 
 Program executed successfully.
+
 
 
 
