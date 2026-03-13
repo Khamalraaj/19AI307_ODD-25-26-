@@ -21,11 +21,10 @@ Write a Java program to sort an array in ascending order
 
 ## PROGRAM:
  ```
-/*
+
 Program to implement an array concept using Java
 Developed by: Khamalraaj S
 RegisterNumber:  212224230122
-*/
 ```
 
 ## SOURCE CODE:
@@ -57,4 +56,5 @@ public class Main {
 ## RESULT:
 
 Program executed successfully
+
 
