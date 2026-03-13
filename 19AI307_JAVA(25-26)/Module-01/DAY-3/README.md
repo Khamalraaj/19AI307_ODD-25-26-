@@ -38,11 +38,11 @@ Write a Java program that takes an integer input from the user and then reverses
 
 ## PROGRAM:
  ```
-/*
+
 Program to implement a Looping Statement using Java
 Developed by: Khamalraaj S
 RegisterNumber:  212224230122
-*/
+
 ```
 
 ## SOURCE CODE:
@@ -75,4 +75,5 @@ public class Reverse {
 ## RESULT:
 
 Program executed successfully.
+
 
