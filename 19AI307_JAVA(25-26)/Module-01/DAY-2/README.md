@@ -37,11 +37,11 @@ Angry
 
 ## PROGRAM:
  ```
-/*
+
 Program to implement a conditional statement using Java
 Developed by: Khamalraaj S
 RegisterNumber:  212224230122
-*/
+
 ```
 
 ## SOURCE CODE:
@@ -82,4 +82,5 @@ public class seo
 ## RESULT:
 
 Program executed successfully.
+
 
