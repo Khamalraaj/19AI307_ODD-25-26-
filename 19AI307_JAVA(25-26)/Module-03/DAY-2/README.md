@@ -28,11 +28,9 @@ To write a Java program that demonstrates method overloading by calculatingthe a
 
 ## PROGRAM:
  ```
-/*
 Program to implement a Polymorphism using Java
 Developed by: Khamalraaj S
 RegisterNumber: 212224230122
-*/
 ```
 ## SOURCE CODE:
 ```
