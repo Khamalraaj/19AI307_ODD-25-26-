@@ -1,103 +1,109 @@
 # Ex.No:3(C) ABSTRACTION
 
 ## QUESTION:
-You are programming bots that analyze weather data. Each bot must implement a 
-common interface and give a prediction.
 
-Bot Types:
-1. SunBot: Predicts "HOT" if temperature > 30, else "MODERATE".
-2. RainBot: Predicts "COLD" if temperature < 20, else "WARM".
+Description:
 
-Input:
-temperature
-botType (1 for SunBot, 2 for RainBot)
+Create abstract class GameScore with method finalScore().
 
-Output:
-Print the prediction string based on the selected bot.
+Subclasses:
+
+ArcadeGame: score = baseScore + (level × 100)
+
+PuzzleGame: score = (attempts ≤ 3) ? 1000 - (attempts × 100) : 500
+
+Input Format:
+
+First line: 1 or 2
+Second line: base, level (or attempts)
+
+Output Format:
+
+Final score (int)
 
 
 
 ## AIM:
-To develop a Java program that uses interfaces and polymorphism to generate weather predictions using different types of bots (SunBot and RainBot).
 
-
+To write a Java program using an abstract class GameScore with subclasses ArcadeGame and PuzzleGame, each implementing its own finalScore() method.
 
 ## ALGORITHM :
-1. Start the program and read the temperature and bot type from the user.
-2. Based on botType, create an object of either SunBot or RainBot.
-3. Each bot implements the WeatherBot interface with its own predict() method.
-4. Call the predict() method using the bot reference, passing the temperature.
-5. Display the prediction returned by the selected bot.
+
+1.	Create an abstract class GameScore with an abstract method finalScore().
+2.	Define subclass ArcadeGame where finalScore = baseScore + (level × 100).
+3.	Define subclass PuzzleGame where
+4.	If attempts ≤ 3, score = 1000 - (attempts × 100)
+5.	Else score = 500.
+6.	Take user input for game type and relevant values.
+7.	Display the final score based on game type.
 
 
 
 ## PROGRAM:
  ```
-Program to implement a Abstraction using Java
+Program to implement an abstraction using Java
 Developed by: Khamalraaj S
 RegisterNumber: 212224230122
 ```
+
 ## SOURCE CODE:
+
 ```
 import java.util.*;
 
-interface WeatherBot {
-    String predict(int temperature);
+abstract class GameScore {
+    abstract int finalScore();
 }
 
-class SunBot implements WeatherBot {
-    @Override
-    public String predict(int temperature) {
-        if (temperature > 30)
-            return "HOT";
-        else
-            return "MODERATE";
+class ArcadeGame extends GameScore {
+    int base, level;
+    ArcadeGame(int base, int level) {
+        this.base = base;
+        this.level = level;
+    }
+    int finalScore() {
+        return base + (level * 100);
     }
 }
 
-class RainBot implements WeatherBot {
-    @Override
-    public String predict(int temperature) {
-        if (temperature < 20)
-            return "COLD";
+class PuzzleGame extends GameScore {
+    int attempts;
+    PuzzleGame(int attempts) {
+        this.attempts = attempts;
+    }
+    int finalScore() {
+        if (attempts <= 3)
+            return 1000 - (attempts * 100);
         else
-            return "WARM";
+            return 500;
     }
 }
 
-public class Main {
+public class prog {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        int temperature = sc.nextInt();
-        int botType = sc.nextInt();
-
-        WeatherBot bot;
-        if (botType == 1) {
-            bot = new SunBot();
-        } else {
-            bot = new RainBot();
+        int type = sc.nextInt();
+        if (type == 1) {
+            int base = sc.nextInt();
+            int level = sc.nextInt();
+            ArcadeGame game = new ArcadeGame(base, level);
+            System.out.println(game.finalScore());
+        } else if (type == 2) {
+            int attempts = sc.nextInt();
+            PuzzleGame game = new PuzzleGame(attempts);
+            System.out.println(game.finalScore());
         }
-
-        System.out.println(bot.predict(temperature));
-        sc.close();
     }
 }
-
 ```
+
 ## OUTPUT:
-<img width="711" height="261" alt="image" src="https://github.com/user-attachments/assets/c7f03a3f-ba13-426b-821f-3d4dfe6bfc68" />
 
-
+<img width="1147" height="386" alt="image" src="https://github.com/user-attachments/assets/4447ae81-3e1b-46a2-91a4-e2ad7316e6a6" />
 
 ## RESULT:
-The program successfully reads the temperature and selects the correct bot 
-based on user input. Using interface implementation, the selected bot predicts 
-the weather condition and displays:
 
-HOT / MODERATE / COLD / WARM
+The program successfully demonstrates abstraction and inheritance by computing the final score for different game types using subclass-specific logic.
 
-Thus, the Java program using interfaces and polymorphism for weather prediction 
-executed successfully.
 
 
