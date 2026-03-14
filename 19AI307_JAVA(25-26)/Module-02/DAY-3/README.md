@@ -9,23 +9,21 @@ To create a Smartphone class with private attributes and methods to access, modi
 
 
 ## ALGORITHM :
-1. Start the program and create a Smartphone class with private attributes brand,      model, and storageCapacity.
+1. Start the program and create a Smartphone class with private attributes brand,model, and storageCapacity.
 
 2. Provide getter and setter methods to access and modify the private attributes.
 
-3. Create a method increaseStorage(int value) to add the given value to                storageCapacity.
+3. Create a method increaseStorage(int value) to add the given value to storageCapacity.
 4. In the main() method, read input from the user for brand, model, storage capacity, and the value to increase storage.
 
-5. Call the increaseStorage() and display() methods to update and show the           smartphone details, then stop the program.
+5. Call the increaseStorage() and display() methods to update and show the smartphone details, then stop the program.
 
 
 ## PROGRAM:
  ```
-/*
 Program to implement a Access Specifiers using Java
 Developed by: Khamalraaj S
 RegisterNumber: 212224230122
-*/
 ```
 
 ## SOURCE CODE:
