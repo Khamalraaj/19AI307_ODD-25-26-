@@ -1,47 +1,45 @@
 # Ex.No:3(A) INHERITANCE AND AGGREGATION
 
 ## QUESTION:
+Create a superclass Person with fields name and age.
+Create a subclass Student that inherits from Person and adds a field marks (integer).
 
-Create a Super class Person with fields name and age. Create a subclass Student that inherits from Person and adds a field marks (integer). Implement a method in Student called calculateGrade() which returns the grade based on the marks:
+Implement a method calculateGrade() inside Student that returns the grade based on marks:
 
-Marks ≥ 90: Grade A
+Marks ≥ 90 → Grade A
 
-Marks ≥ 75 and < 90: Grade B
+Marks ≥ 75 and < 90 → Grade B
 
-Marks ≥ 50 and < 75: Grade C
+Marks ≥ 50 and < 75 → Grade C
 
-Marks < 50: Grade F
+Marks < 50 → Grade F
+
+Write a Java program to read the student details and display Name, Age, Marks, and Grade.
+
 
 ## AIM:
-
-To write a Java program to create a superclass Person with fields name and age, and a subclass Student that inherits from Person and calculates the grade based on marks.
+To write a Java program using single inheritance, where the subclass Student extends the superclass Person, and calculates the student’s grade based on marks using conditional statements.
 
 ## ALGORITHM :
-1.	Start the program.
-2.	Import the necessary package 'java.util'
-3.	Create a superclass Person with variables name and age, and initialize them using a constructor.
-4. Create a subclass Student that inherits from Person and adds a variable marks.
-5. Create a constructor in Student to initialize name, age, and marks using the super keyword.
-6. Implement the method calculateGrade() to return grade A, B, C, or F based on the marks condition.
-7. In the main method, read the student details, create a Student object, display the details, and print the calculated grade.
-
+1. Start the program and read the user's input: name, age, and marks.
+2. Create a Student object using the given name, age, and marks.
+3. Inside the Student class, compare the marks using conditions to determine the grade (A, B, C, or F).
+4. Call the calculateGrade() method to get the student’s grade.
+5. Display the student's name, age, marks, and calculated grade.
 
 
 
 
 ## PROGRAM:
  ```
-
 Program to implement a Inheritance and Aggregation using Java
 Developed by: Khamalraaj S
-RegisterNumber:  212224230122
-
+RegisterNumber: 212224230122
 ```
 
-## SOURCE CODE:
-
 ```
-import java.util.*;
+import java.util.Scanner;
+
 class Person {
     String name;
     int age;
@@ -60,38 +58,42 @@ class Student extends Person {
         this.marks = marks;
     }
 
-    char calculateGrade() {
-        if (marks >= 90)
-            return 'A';
-        else if (marks >= 75 && marks<90)
-            return 'B';
-        else if (marks >= 50&& marks<75)
-            return 'C';
-        else
-            return 'F';
+    String calculateGrade() {
+        if (marks >= 90) {
+            return "A";
+        } else if (marks >= 75) {
+            return "B";
+        } else if (marks >= 50) {
+            return "C";
+        } else {
+            return "F";
+        }
     }
 }
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        String name=sc.nextLine();
-        int age=sc.nextInt();
-        int marks=sc.nextInt();
-        Student s = new Student(name,age,marks);
-         System.out.println("Name: "+name);
-         System.out.println("Age: "+age);
-         System.out.println("Marks: "+marks);
-        System.out.println("Grade: "+s.calculateGrade());
+        Scanner sc = new Scanner(System.in);
+
+        String name = sc.nextLine();
+        int age = sc.nextInt();
+        int marks = sc.nextInt();
+
+        Student s = new Student(name, age, marks);
+
+        System.out.println("Name: " + s.name);
+        System.out.println("Age: " + s.age);
+        System.out.println("Marks: " + s.marks);
+        System.out.println("Grade: " + s.calculateGrade());
     }
 }
+
 ```
 
-## OUTPUT:
 
-![alt text](image.png)
+## OUTPUT:
+<img width="764" height="674" alt="image" src="https://github.com/user-attachments/assets/c1a44f8b-2c23-4a50-8c06-57c1f21dc3fd" />
 
 ## RESULT:
+Thus, the Java program to calculate the student's grade using inheritance is executed successfully.
 
-The Java program was executed successfully.
-The Student class inherited the properties of the Person class, and the grade was calculated correctly based on the student's marks.
